@@ -13,15 +13,35 @@ $(document).ready(function(){
     	var _thisDay = new Date(_year, _month - 1, i + 1 - _firstDay.getDay());
     	var _thisDayNumber = _thisDay.getDate();
     	var _thisDayMonth = _thisDay.getMonth()+1;
+        var _liStyle = "";
     	var _otherMonthStyle = "other";
-    	var _weekendStyle = "";
-    	if (_thisDayMonth == _month) {
-    		_otherMonthStyle = "";
-    	}
-    	if (_thisDay.getDay() == 6 || _thisDay.getDay() == 0) {
-    		_weekendStyle = "weekend";
-    	}
-    	$(".calender").append("<li class="+"'"+_otherMonthStyle+ "&nbsp;" +_weekendStyle+"'"+">"+_thisDayNumber+"</li>");
+    	var _weekendStyle = "weekend";
+    	// if (_thisDayMonth != _month) {
+    	// 	_otherMonthStyle = "other";
+    	// }
+    	// if (_thisDay.getDay() == 6 || _thisDay.getDay() == 0) {
+    	// 	_weekendStyle = "weekend";
+    	// }
+        if (_thisDayMonth != _month) {
+            if (_thisDay.getDay() == 6 || _thisDay.getDay() == 0) {
+                _liStyle = _otherMonthStyle+ " " +_weekendStyle;
+            } else {
+                _liStyle = _otherMonthStyle;
+            }
+        } else {
+            if (_thisDay.getDay() == 6 || _thisDay.getDay() == 0) {
+                _liStyle = _weekendStyle;
+            } else {
+                _liStyle = "";
+            }
+        }
+
+        if (_thisDay.getDate() == _today.getDate() && _thisDayMonth == _month && _thisDay.getFullYear() == _year) {
+            _liStyle += " today";
+        }
+
+
+    	$(".calender").append("<li class="+"'"+_liStyle+"'"+"><div class='date'>"+_thisDayNumber+"</div></li>");
     }
 })
 
