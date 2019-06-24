@@ -41,14 +41,6 @@
             <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
             <!-- <li><a href="#">Link</a></li> -->
           </ul>
-          <div class="btn-toolbar" role="toolbar">
-            <div class="input-group" style="width: 250px;" onclick="$('#FileInput')[0].click()">
-            <span class="input-group-btn">
-                  <button class="btn btn-info" type="button" ><i class="glyphicon glyphicon-folder-open"></i>选择文件</button>
-                </span>
-              <input type="text" class="form-control" placeholder="请选择文件" readonly="readonly" id="excelfile">
-            </div>
-          </div>
           <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
@@ -59,7 +51,11 @@
       </div><!-- /.container-fluid -->
     </nav>
     <section>
-      <h1 id="calender-title"></h1>
+      <h1>
+        <button id="lastMonth" href="" class="btn btn-default btn-lastmonth"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+        <span id="calender-title" class="text-center header"></span>
+        <button id="nextMonth" href="" class="btn btn-default btn-nextmonth"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+      </h1>
       <ul class="calender-head">
           <li>周日</li>
           <li>周一</li>

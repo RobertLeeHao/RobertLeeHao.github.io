@@ -7,8 +7,35 @@ body {
 }*/
 h1 {
 	margin-left: 40px;
+	margin-right: 40px;
+	color: white;
+	position: relative;
+}
+.header {
+	display: block;
+	text-align: center;
+}
+.btn-lastmonth, .btn-nextmonth {
+	position: absolute;
+	top:0;
+	background-color: rgba(0,0,0,0.00001);
+	color: white;
+	height: 40px;
+	line-height: 32px;
+	font-size: 20px;
+	border: none;
+}
+.btn-lastmonth:hover, .btn-nextmonth:hover {
+	background-color: rgba(255,255,255,0.2);
 	color: white;
 }
+.btn-lastmonth {
+	left: 0;
+}
+.btn-nextmonth {
+	right: 0;
+}
+
 ul.calender-head {
 	text-align: right;
 }
