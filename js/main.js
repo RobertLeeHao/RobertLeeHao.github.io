@@ -1,8 +1,8 @@
 $(document).ready(function(){
+
     var _today = new Date(); //获取今天年月日，这个是常量，用作第一次载入页面设置日历和条件比对
     var _year = _today.getFullYear(); //获取当月，这个变量负责展示日历，切换月份时变化
     var _month = _today.getMonth()+1; //获取当年，这个变量负责展示日历，切换月份时变化
-
     var count = 42 // 定义每月格子数量
 
     //定义加载日历方法
@@ -40,13 +40,30 @@ $(document).ready(function(){
             //放置格子
             $(".calender").append("<li class="+"'"+_liStyle+"'"+"><div class='date'>"+_thisDayNumber+"</div></li>");
         }
+        getdata();
     }
+
     //定义清除日历方法
-    function removeCalender(){
-        $(".calender *").remove();
-    }
+    // function removeCalender(){
+    //     $(".calender *").remove();
+    // }
+
+
+    // function getdata(){
+    //     // 显示JSON数据至页面
+    //     $.getJSON("../json/data.json",function(data){
+    //         var str="<div class='list-group'>";
+    //         $.each(data.list,function(i,n){
+    //             str+="<a href='"+n["src"]+"' target='_Blank' class='item-news list-group-item'><div class='row'><div class='col-sm-7'><h5 class='list-group-item-heading'>"+n["title"]+"</h5><p class='date'>"+n["date"]+"</p><p class='hidden-xs'>"+n["sum"]+"</p></div><div class='col-sm-5'><div class='newsimg' style='background-image:url("+n["img"]+")'></div></div></div></a>";
+    //         })
+    //         str+="</div>";
+    //         $("#newslist").append(str);
+    //     });
+    // }
+
     //加载日历
     getCalender();
+
     // 切换上月日历
     $("#lastMonth").click(function(){
         //切换年份
@@ -59,6 +76,7 @@ $(document).ready(function(){
         removeCalender();
         getCalender();
     })
+
     // 切换下月日历
     $("#nextMonth").click(function(){
         //切换年份
