@@ -2,6 +2,25 @@ body {
 	background-color: #424242;
 	padding-top: 50px;
 }
+
+.bg1 {
+	background-color: red;
+}
+.bg2 {
+	background-color: blue;
+}
+.bg3 {
+	background-color: orange;
+}
+.bg4 {
+	background-color: gray;
+}
+.bg5 {
+	background-color: purple;
+}
+.bg6 {
+	background-color: brown;
+}
 /*.navbar-default {
 	background: #212121;
 }*/
@@ -81,7 +100,8 @@ ul.calender, ul.calender-head {
 }
 .calender li {
 	position: relative;
-	min-height: 100px;
+	padding-top: 40px;
+	min-height: 60px;
 	border-right:1px #616161 solid;
 	border-bottom:1px #616161 solid;
 	color: white;
@@ -95,4 +115,9 @@ ul.calender, ul.calender-head {
 }*/
 .calender li.weekend {
 	color: #616161;
+}
+
+.pjt {
+	height: 20px;
+	margin: 0 -10px;
 }

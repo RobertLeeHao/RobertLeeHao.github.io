@@ -16,6 +16,24 @@ $(document).ready(function(){
             var _thisDay = new Date(_year, _month - 1, i + 1 - _firstDay.getDay()); //定义每格年月日
             var _thisDayNumber = _thisDay.getDate(); //定义每格日期展示
             var _thisDayMonth = _thisDay.getMonth()+1; //定义每格月份
+
+            // 格式化日期月份，做id用
+
+            var _dateForId;
+            if (_thisDay.getDate()<10) {
+                _dateForId = "0" + _thisDay.getDate();
+            } else {
+                _dateForId = _thisDay.getDate();
+            }
+
+            var _monthForId;
+            if (_thisDayMonth < 10) {
+                _monthForId = "0" + _thisDayMonth;
+            } else {
+                _monthForId = _thisDayMonth;
+            }
+
+            var _id = "date"+_thisDay.getFullYear() + _monthForId + _dateForId; //定义id
             var _liStyle = ""; //每格包含类集合
             var _otherMonthStyle = "other"; //非本月格子类名
             var _weekendStyle = "weekend"; //周末格子类名
@@ -38,28 +56,52 @@ $(document).ready(function(){
                 _liStyle += " today";
             }
             //放置格子
-            $(".calender").append("<li class="+"'"+_liStyle+"'"+"><div class='date'>"+_thisDayNumber+"</div></li>");
+            $(".calender").append("<li id="+"'"+_id+"'"+" class="+"'"+_liStyle+"'data-date='"+_thisDay.getFullYear() + _monthForId + _dateForId+"'><div class='date'>"+_thisDayNumber+"</div></li>");
         }
         getdata();
     }
 
     //定义清除日历方法
-    // function removeCalender(){
-    //     $(".calender *").remove();
-    // }
+    function removeCalender(){
+        $(".calender *").remove();
+    }
 
 
-    // function getdata(){
-    //     // 显示JSON数据至页面
-    //     $.getJSON("../json/data.json",function(data){
-    //         var str="<div class='list-group'>";
-    //         $.each(data.list,function(i,n){
-    //             str+="<a href='"+n["src"]+"' target='_Blank' class='item-news list-group-item'><div class='row'><div class='col-sm-7'><h5 class='list-group-item-heading'>"+n["title"]+"</h5><p class='date'>"+n["date"]+"</p><p class='hidden-xs'>"+n["sum"]+"</p></div><div class='col-sm-5'><div class='newsimg' style='background-image:url("+n["img"]+")'></div></div></div></a>";
-    //         })
-    //         str+="</div>";
-    //         $("#newslist").append(str);
-    //     });
-    // }
+    function getdata(){
+        // 显示JSON数据至页面
+        $.getJSON("json/data.json",function(data){
+            // 获取json数据
+            $.each(data.list,function(i,n){
+                var _thisStart = n["startDate"];
+                var _thisFinish = n["finishDate"]
+                // 确认年月做基准
+                var _thisMonth;
+                if (_month <10){
+                    _thisMonth = _year + "0" + _month;
+                } else {
+                    _thisMonth = _year + _month;
+                }
+                //判断项目是否在本月出现
+                if (Math.floor(_thisStart/100) <= _thisMonth && Math.floor(_thisFinish/100) >= _thisMonth) {
+                    //循环查看格子是否符合项目时间区间
+                    for (var i = 0; i < count; i++) {
+                        var _thisId = $(".calender").find("li").eq(i).attr("data-date");
+                        if (_thisId > _thisStart && _thisId <= _thisFinish) {
+                            //展示项目
+                            $(".calender").find("li").eq(i).append(
+                                "<div class='pjt bg"+(n["bg"]%6)+"'></div>"
+                            );
+                        } else if (_thisId == _thisStart) {
+                            //展示项目标题
+                            $(".calender").find("li").eq(i).append(
+                                "<div class='pjt bg"+(n["bg"]%6)+"'>"+ n["title"] +"</div>"
+                            );
+                        }
+                    }
+                }   
+            })
+        });
+    }
 
     //加载日历
     getCalender();
