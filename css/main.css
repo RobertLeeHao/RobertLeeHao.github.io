@@ -49,16 +49,28 @@ h1 {
 	color: white;
 }
 .btn-lastmonth {
-	left: 0;
+	left: -40px;
 }
 .btn-nextmonth {
-	right: 0;
+	right: -40px;
 }
 
-ul.calender-head {
-	text-align: right;
+
+
+section {
+	margin: 0 40px;
 }
-ul.calender .date{
+
+
+/*tr.calender-head {
+	text-align: right;
+}*/
+.calender {
+	display: table;
+	width: 100%;
+	border: 1px #616161 solid;
+}
+.calender .date{
 	text-align: right;
 	height: 24px;
 	width: 24px;
@@ -68,52 +80,54 @@ ul.calender .date{
 	top: 5px;
 	padding:  2px 5px 0 0;
 }
-ul.calender .other * {
+/*.calender tbody {
+	display: table;
+}*/
+.calender .other * {
 	opacity: 0;
 }
-ul.calender .today .date {
+.calender .today .date {
 	text-align: center;
 	padding:  2px 0 0 0;
 	background: #e51c23;
 }
-ul.calender .today.weekend .date {
+.calender .today.weekend .date {
 	text-align: right;
 	background: transparent;
 }
-ul.calender, ul.calender-head {
-	margin:0 40px;
-	display: block;
-	list-style-type: none;
+.calender, tr.calender-head {
 	padding: 0;
 	overflow: hidden;
 }
 
-.calender li, .calender-head li {
-	display: inline-block;
-	float: left;
-	width: 14.284714%;
+.calender td, .calender-head td {
 	padding: 10px;
 }
-.calender {
+/*.calender {
 	border-left:1px #616161 solid;
 	border-top:1px #616161 solid;
+}*/
+.calender th {
+	height: 60px;
 }
-.calender li {
+.calender td {
 	position: relative;
 	padding-top: 40px;
-	min-height: 60px;
-	border-right:1px #616161 solid;
-	border-bottom:1px #616161 solid;
+	height: 100px;
 	color: white;
 }
-.calender-head li {
+.calender th, .calender td {
+	border-right:1px #616161 solid;
+	border-bottom:1px #616161 solid;
+}
+.calender-head td {
 	/*height: 10px;*/
 	color: white;
 } 
 /*.calender li.other, .calender li.other.weekend {
 	color: #616161;
 }*/
-.calender li.weekend {
+.calender td.weekend {
 	color: #616161;
 }
 

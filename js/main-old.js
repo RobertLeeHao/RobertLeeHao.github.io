@@ -37,7 +37,6 @@ $(document).ready(function(){
             var _liStyle = ""; //每格包含类集合
             var _otherMonthStyle = "other"; //非本月格子类名
             var _weekendStyle = "weekend"; //周末格子类名
-            var _thisRow = "row"+Math.floor(i/7); //格子所在行
             // 判断每格日期是否为非当月日期、是否为周末并确定每格包含类
             if (_thisDayMonth != _month) {
                 if (_thisDay.getDay() == 6 || _thisDay.getDay() == 0) {
@@ -57,14 +56,14 @@ $(document).ready(function(){
                 _liStyle += " today";
             }
             //放置格子
-            $("tr[id='"+_thisRow+"']").append("<td id="+"'"+_id+"'"+" class="+"'"+_liStyle+"'data-date='"+_thisDay.getFullYear() + _monthForId + _dateForId+"'><div class='date'>"+_thisDayNumber+"</div></td>");
+            $(".calender").append("<li id="+"'"+_id+"'"+" class="+"'"+_liStyle+"'data-date='"+_thisDay.getFullYear() + _monthForId + _dateForId+"'><div class='date'>"+_thisDayNumber+"</div></li>");
         }
         getdata();
     }
 
     //定义清除日历方法
     function removeCalender(){
-        $(".calender td").remove();
+        $(".calender *").remove();
     }
 
 
@@ -86,15 +85,15 @@ $(document).ready(function(){
                 if (Math.floor(_thisStart/100) <= _thisMonth && Math.floor(_thisFinish/100) >= _thisMonth) {
                     //循环查看格子是否符合项目时间区间
                     for (var i = 0; i < count; i++) {
-                        var _thisId = $(".calender").find("td").eq(i).attr("data-date");
+                        var _thisId = $(".calender").find("li").eq(i).attr("data-date");
                         if (_thisId > _thisStart && _thisId <= _thisFinish) {
                             //展示项目
-                            $("td[id='date"+ _thisId +"']").append(
+                            $(".calender").find("li").eq(i).append(
                                 "<div class='pjt bg"+(n["bg"]%6)+"'></div>"
                             );
                         } else if (_thisId == _thisStart) {
                             //展示项目标题
-                            $("td[id='date"+ _thisId +"']").append(
+                            $(".calender").find("li").eq(i).append(
                                 "<div class='pjt bg"+(n["bg"]%6)+"'>"+ n["title"] +"</div>"
                             );
                         }
