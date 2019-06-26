@@ -69,6 +69,24 @@ section {
 	display: table;
 	width: 100%;
 	border: 1px #616161 solid;
+	margin-top: 20px;
+}
+.calender th {
+	height: 60px;
+	text-align: right;
+	color: gray;
+}
+.calender td {
+	position: relative;
+	padding-top: 40px;
+	height: 100px;
+	color: white;
+	background-color: rgba(255,255,255,0.05);
+}
+.calender th, .calender td {
+	padding: 10px;
+	border-right:1px #616161 solid;
+	border-bottom:1px #616161 solid;
 }
 .calender .date{
 	text-align: right;
@@ -80,9 +98,6 @@ section {
 	top: 5px;
 	padding:  2px 5px 0 0;
 }
-/*.calender tbody {
-	display: table;
-}*/
 .calender .other * {
 	opacity: 0;
 }
@@ -95,42 +110,10 @@ section {
 	text-align: right;
 	background: transparent;
 }
-.calender, tr.calender-head {
-	padding: 0;
-	overflow: hidden;
-}
-
-.calender td, .calender-head td {
-	padding: 10px;
-}
-/*.calender {
-	border-left:1px #616161 solid;
-	border-top:1px #616161 solid;
-}*/
-.calender th {
-	height: 60px;
-}
-.calender td {
-	position: relative;
-	padding-top: 40px;
-	height: 100px;
-	color: white;
-}
-.calender th, .calender td {
-	border-right:1px #616161 solid;
-	border-bottom:1px #616161 solid;
-}
-.calender-head td {
-	/*height: 10px;*/
-	color: white;
-} 
-/*.calender li.other, .calender li.other.weekend {
-	color: #616161;
-}*/
 .calender td.weekend {
 	color: #616161;
+	background-color: rgba(255,255,255,0);
 }
-
 .pjt {
 	height: 20px;
 	margin: 0 -10px;
