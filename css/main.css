@@ -76,17 +76,17 @@ section {
 	text-align: right;
 	color: gray;
 }
-.calender td {
-	position: relative;
-	padding-top: 40px;
-	height: 100px;
-	color: white;
-	background-color: rgba(255,255,255,0.05);
-}
 .calender th, .calender td {
 	padding: 10px;
 	border-right:1px #616161 solid;
 	border-bottom:1px #616161 solid;
+}
+.calender td {
+	position: relative;
+	padding-top: 35px;
+	height: 100px;
+	color: white;
+	background-color: rgba(255,255,255,0.05);
 }
 .calender .date{
 	text-align: right;

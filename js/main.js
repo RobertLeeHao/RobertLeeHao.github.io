@@ -57,7 +57,7 @@ $(document).ready(function(){
                 _liStyle += " today";
             }
             //放置格子
-            $("tr[id='"+_thisRow+"']").append("<td id="+"'"+_id+"'"+" class="+"'"+_liStyle+"'data-date='"+_thisDay.getFullYear() + _monthForId + _dateForId+"'><div class='date'>"+_thisDayNumber+"</div></td>");
+            $("tr[id='"+_thisRow+"']").append("<td id="+"'"+_id+"'"+" class="+"'"+_liStyle+"'data-date='"+_thisDay.getFullYear() + _monthForId + _dateForId+"' valign='top'><div class='date'>"+_thisDayNumber+"</div></td>");
         }
         getdata();
     }
