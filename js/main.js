@@ -40,14 +40,18 @@ $(document).ready(function(){
             var _thisRow = "row"+Math.floor(i/7); //格子所在行
             // 判断每格日期是否为非当月日期、是否为周末并确定每格包含类
             if (_thisDayMonth != _month) {
-                if (_thisDay.getDay() == 6 || _thisDay.getDay() == 0) {
-                    _liStyle = _otherMonthStyle+ " " +_weekendStyle;
+                if (_thisDay.getDay() == 6) {
+                    _liStyle = _otherMonthStyle+ " " +_weekendStyle+" sat";
+                } else if (_thisDay.getDay() == 0) {
+                    _liStyle = _otherMonthStyle+ " " +_weekendStyle+" sun";
                 } else {
                     _liStyle = _otherMonthStyle;
                 }
             } else {
-                if (_thisDay.getDay() == 6 || _thisDay.getDay() == 0) {
-                    _liStyle = _weekendStyle;
+                if (_thisDay.getDay() == 6) {
+                    _liStyle = _weekendStyle+" sat";
+                } else if (_thisDay.getDay() == 0) {
+                    _liStyle = _weekendStyle+" sun";
                 } else {
                     _liStyle = "";
                 }
@@ -67,7 +71,7 @@ $(document).ready(function(){
         $(".calender td").remove();
     }
 
-
+    //加载任务
     function getdata(){
         // 显示JSON数据至页面
         $.getJSON("json/data.json",function(data){
@@ -87,15 +91,15 @@ $(document).ready(function(){
                     //循环查看格子是否符合项目时间区间
                     for (var i = 0; i < count; i++) {
                         var _thisId = $(".calender").find("td").eq(i).attr("data-date");
-                        if (_thisId > _thisStart && _thisId <= _thisFinish) {
-                            //展示项目
+                        var _pjtTitle = "";
+                        if (_thisId >= _thisStart && _thisId <= _thisFinish) {
+
+                            if (_thisId == _thisStart || $(".calender").find("td").eq(i).hasClass('sun')) {
+                                _pjtTitle = n["title"];
+                            }
+                            //在格子里展示任务
                             $("td[id='date"+ _thisId +"']").append(
-                                "<div class='pjt bg"+(n["bg"]%6)+"'></div>"
-                            );
-                        } else if (_thisId == _thisStart) {
-                            //展示项目标题
-                            $("td[id='date"+ _thisId +"']").append(
-                                "<div class='pjt bg"+(n["bg"]%6)+"'>"+ n["title"] +"</div>"
+                                "<div class='pjt bg"+(n["bg"]%6)+"' data-pjt='"+n["pjtID"]+"''>"+_pjtTitle+"</div>"
                             );
                         }
                     }
@@ -103,9 +107,21 @@ $(document).ready(function(){
             })
         });
     }
+    //任务排列
+    function arrgedata(){
+        for (var i = 0; i < 6; i++) {
+            //定位行并以每行为维度
+            var _thisRowforarrge = $("[id='row"+i+"']");
+            //查看这一行每天任务数量的最大值
+            var _misnbag;
+        }
+    }
 
-    //加载日历
+    //执行加载日历
     getCalender();
+
+    //执行任务排列
+    arrgedata();
 
     // 切换上月日历
     $("#lastMonth").click(function(){
