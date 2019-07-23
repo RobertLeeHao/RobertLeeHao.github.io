@@ -1,3 +1,33 @@
+/* override */
+
+.navbar-nav {
+	margin: 7.5px 0px;
+}
+@media (min-width: 768px){
+	.navbar-right {
+		float: right!important;
+		margin-right: 0;
+	}
+}
+
+
+/* main styles */
+
 body {
 	padding-top: 70px;
+	padding-bottom: 90px;
+}
+h3 {
+	position: relative;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+h3::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 2px;
+	bottom: 2px;
+	width: 4px;
+	background-color: rgba(0,0,0,0.2);
 }

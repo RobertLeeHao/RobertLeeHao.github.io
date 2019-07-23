@@ -13,22 +13,30 @@
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
+      <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" href="#">周报编辑器</a>
         </div>
       </div><!-- /.container-fluid -->
     </nav>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+        <li><button type="button" class="btn btn-default navbar-btn">生成邮件</button></li>
+      </ul>
+      </div><!-- /.container-fluid -->
+    </nav>
     <div class="container">
       <div class="row">
-        <form class="col-md-4">
-          <h3>前置内容</h3>
+        <form class="col-md-6">
+          <h3>编辑区域</h3>
+          <h4>前置内容</h4>
           <div class="form-group">
             <label for="exampleInputEmail1">收件人</label>
             <div class="dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                收件人
+                选择收件人
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -45,21 +53,35 @@
             <label for="exampleInputEmail1">导语</label>
             <textarea class="form-control" rows="3" placeholder="Hi xxx"></textarea>
           </div>
-          <h3>主要内容</h3>
+          <h4>主要内容</h4>
           <div class="form-group">
-            <label for="exampleInputEmail1">产品线</label>
+            <!-- <label for="exampleInputEmail1">产品线</label> -->
             <div class="input-group">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1级内容 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">1级内容</a></li>
+                  <li><a href="#">2级内容</a></li>
+                  <li><a href="#">3级内容</a></li>
+                  <li><a href="#">4级内容</a></li>
+                </ul>
+              </div>
               <input type="text" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">+</button>
-                <button class="btn btn-default" type="button">x</button>
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
               </span>
             </div>
           </div>
+          <button class="btn btn-primary">+ 添加条目</button>
+          <h4>发件人姓名</h4>
+          <div class="form-group">
+            <!-- <label for="exampleInputEmail1">产品线</label> -->
+            <input type="text" class="form-control" placeholder="填写姓名">
+          </div>
         </form>
-        <div class="col-md-8">
+        <div class="col-md-6">
           <h3>效果预览</h3>
-          <table width="640px"  style="background-color: rgba(0,0,0,0.04);border: 1px solid  rgba(0,0,0,0.06)">
+          <table style="background-color: rgba(0,0,0,0.04);border: 1px solid  rgba(0,0,0,0.06)">
             <tr>
               <th style="padding-left: 10px; padding-top: 15px;">Hi 吴凡</th>
             </tr>
