@@ -25,21 +25,8 @@
         <form class="col-md-4">
           <h3>前置内容</h3>
           <div class="form-group">
-            <label for="exampleInputEmail1">收件人</label>
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                收件人
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">吴凡</a></li>
-                <li><a href="#">吴凡</a></li>
-                <li><a href="#">吴凡</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">吴凡</a></li>
-                <li><a href="#">江文</a></li>
-              </ul>
-            </div>
+            <label for="exampleInputEmail1">标题</label>
+            <input class="form-control" placeholder="周报-XXXX">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">导语</label>
@@ -49,12 +36,22 @@
           <div class="form-group">
             <label for="exampleInputEmail1">产品线</label>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">一级菜单 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">一级菜单</a></li>
+                  <li><a href="#">二级菜单</a></li>
+                  <li><a href="#">三级菜单</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+              <input type="text" class="form-control" placeholder="">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">+</button>
-                <button class="btn btn-default" type="button">x</button>
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
               </span>
             </div>
+          </div>
+          <div class="form-group">
+                <button class="btn btn-default btn-block" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
           </div>
         </form>
         <div class="col-md-8">
