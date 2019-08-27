@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>自由行产品&设计组周报编辑器</title>
     <link href="plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="plugin/fileinput/css/fileinput.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugin/fileinput/js/fileinput.min.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
@@ -23,36 +25,25 @@
     <div class="container">
       <div class="row">
         <form class="col-md-4">
-          <h3>前置内容</h3>
+          <h3>MD文件上传</h3>
           <div class="form-group">
-            <label for="exampleInputEmail1">标题</label>
-            <input class="form-control" placeholder="周报-XXXX">
+            <input id="input-b1" name="input-b1" type="file" >
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">导语</label>
-            <textarea class="form-control" rows="3" placeholder="Hi xxx"></textarea>
+          <div class="form-group editArea">
+            <label for="exampleInputEmail1">文本编辑 <small>可在此处继续编辑上传的文本文件</small></label>
+            <textarea class="form-control previewArea" rows="12" placeholder=""></textarea>
           </div>
-          <h3>主要内容</h3>
-          <div class="form-group">
-            <label for="exampleInputEmail1">产品线</label>
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">一级菜单 <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">一级菜单</a></li>
-                  <li><a href="#">二级菜单</a></li>
-                  <li><a href="#">三级菜单</a></li>
-                </ul>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control" placeholder="">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-              </span>
-            </div>
-          </div>
-          <div class="form-group">
-                <button class="btn btn-default btn-block" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-          </div>
+          <h3>说明</h3>
+          <p>MD文件为后缀名为.md的文本格式文件。使用简单的标记即可对文字进行样式调整。上传的MD文件可在本页面预览效果，点击发送即可调用本地邮箱发送格式美观的邮件。</p>
+          <h5>格式介绍</h5>
+          <p>在字段前增加“#”可定义标题，“#”后面字段为一级标题，“##”后面为二级标题，以此类推支持6级标题。注意“#”和文字中间需要增加空格，例如“## 我是二级标题”</p>
+          <p>无序列表可以用* ， + ， — 来创建，用在线编辑器看，实际上是转换成了ul>li ，所以使用哪个都可以，推荐使用*吧</p>
+          <p>有序列表用数字+“.”来创建</p>
+          <p>“>”表示引用，类似标题，可支持7级引用</p>
+          <p>分割线可以由* - _（星号，减号，底线）这3个符号的至少3个符号表示，注意至少要3个，且不需要连续，有空格也可以</p>
+          <p>链接的文字放在[]中，链接地址放在随后的（）中</p>
+          <p>可以在线编辑，地址：<a href="http://tool.oschina.net/markdown/">markdown在线编辑</a></p>
+          
         </form>
         <div class="col-md-8">
           <h3>效果预览</h3>
