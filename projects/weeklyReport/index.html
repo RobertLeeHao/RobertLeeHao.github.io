@@ -11,6 +11,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="plugin/bootstrap/js/bootstrap.min.js"></script>
     <script src="plugin/fileinput/js/fileinput.min.js"></script>
+    <script src="plugin/marked/marked.min.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
@@ -27,11 +28,11 @@
         <form class="col-md-4">
           <h3>MD文件上传</h3>
           <div class="form-group">
-            <input id="input-b1" name="input-b1" type="file" >
+            <input id="inputin" name="input-b1" type="file" >
           </div>
           <div class="form-group editArea">
             <label for="exampleInputEmail1">文本编辑 <small>可在此处继续编辑上传的文本文件</small></label>
-            <textarea class="form-control previewArea" rows="12" placeholder=""></textarea>
+            <textarea id="text-input" class="form-control" rows="12"></textarea>
           </div>
           <h3>说明</h3>
           <p>MD文件为后缀名为.md的文本格式文件。使用简单的标记即可对文字进行样式调整。上传的MD文件可在本页面预览效果，点击发送即可调用本地邮箱发送格式美观的邮件。</p>
@@ -48,53 +49,11 @@
         <div class="col-md-8">
           <h3>效果预览</h3>
           <table width="640px"  style="background-color: rgba(0,0,0,0.04);border: 1px solid  rgba(0,0,0,0.06)">
-            <tr>
+            <!-- <tr>
               <th style="padding-left: 10px; padding-top: 15px;">Hi 吴凡</th>
-            </tr>
+            </tr> -->
             <tr>
-              <td style="padding-left: 10px; padding-top: 10px;">本周周报（2019.07.12-07.18）如下：</td>
-            </tr>
-            <tr>
-              <td style="padding: 10px;">
-                <table style="background-color: rgba(255,255,255,255); ">
-                  <tr>
-                    <th height="10px"></th>
-                  </tr>
-                  <tr>
-                    <th style="padding-left: 10px; padding-bottom: 5px">常规迭代事项</th>
-                  </tr>
-                  <tr>
-                    <td style="padding-left: 10px;">V8.8：需求开发进行中，部分需求已提测</td>
-                  </tr>
-                  <tr>
-                    <td style="padding-left: 10px;">V8.10：全部PRD已完成评审（机票货架化需求暂延）</td>
-                  </tr>
-                  <tr>
-                    <th height="10px"></th>
-                  </tr>
-                  <tr>
-                    <th style="padding-left: 10px; padding-bottom: 5px">移动端-PKG</th>
-                  </tr>
-                  <tr>
-                    <td style="padding-left: 10px;">机票中间页引流：</td>
-                  </tr>
-                  <tr>
-                    <td style="padding-left: 10px;">目前流量为50%，取7月2日~7月15日2周数据如下（已刨除酒店异常订单）：</td>
-                  </tr>
-                  <tr>
-                    <td style="padding-left: 10px;">自由行国内收益显著增长9.89%，国际收益显著增长19.24%；Total国内收益不显著下降0.06%，国际收益不显著下降0.33%；</td>
-                  </tr>
-                  <tr>
-                    <th height="10px"></th>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding-left: 10px;"><h5 style="margin-bottom: 5px;">姓名</h5></td>
-            </tr>
-            <tr>
-              <td style="padding-left: 10px; padding-bottom: 20px;">自由行前端产品 | Tel:198311</td>
+              <td id="preview" style="padding-left: 10px; padding-top: 10px;"></td>
             </tr>
           </table>
         </div>

@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	$("#input-b1").fileinput({
+	var _fileIn = $('#inputin');
+	var _content;
+	_fileIn.fileinput({
 		'showUpload':false, 
 		'browseOnZoneClick':true,
 		'showClose':false,
@@ -10,21 +12,49 @@ $(document).ready(function(){
 	});
 	$('.file-caption-main').hide();
 	$('.editArea').hide();
-	$("#input-b1").on('change', function(event, numFiles, label) {
+	_fileIn.on('change', function(event, numFiles, label) {
 		$('.file-caption-main').show();
 	    $('.editArea').show();
 	    $('.file-preview').hide();
 	});
 
-	$("#input-b1").on('fileclear', function(event) {
+	_fileIn.on('fileclear', function(event) {
 	    $('.file-caption-main').hide();
 	    $('.editArea').hide();
 	    $('.file-preview').show();
 	});
 
-	$("#input-b1").on('fileloaded', function(event) {
+	_fileIn.on('fileloaded', function(event) {
 	    // console.log($('#input-b1').fileinput('getPreview'));
-	    var _content = $('.file-preview-text').text();
-	    $('.editArea textarea').text(_content);
+	    _content = $('.file-preview-text').val();
+	    // console.log(_content);
+	    $('#text-input').val(_content);
+	    document.getElementById('preview').innerHTML =
+      	marked($('#text-input').val());
+
 	});
+
+	// function changePreview() {
+	// 	document.getElementById('preview').innerHTML =
+ //      marked($('#text-input').val());
+	// }
+
+	// function Editor(input, preview) {
+ //        this.update = function () {
+ //          preview.innerHTML = markdown.toHTML(input.value);
+ //        };
+ //        input.editor = this;
+ //        this.update();
+ //      }
+ //      var $ = function (id) { return document.getElementById(id); };
+ //      new Editor($("text-input"), $("preview"));
+ // 	$('textarea').bind('input propertychange', function() {
+	//     $('.msg').html($(this).val().length + ' characters');
+	// });
+	$('#text-input').bind('input propertychange', function() {
+	    document.getElementById('preview').innerHTML =
+      	marked($('#text-input').val());
+	});
+
+	
 })
