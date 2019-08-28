@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	var _fileIn = $('#inputin');
 	var _content;
+	var _outContent;
 	_fileIn.fileinput({
 		'showUpload':false, 
 		'browseOnZoneClick':true,
@@ -20,7 +21,7 @@ $(document).ready(function(){
 
 	_fileIn.on('fileclear', function(event) {
 	    $('.file-caption-main').hide();
-	    $('.editArea').hide();
+	    // $('.editArea').hide();
 	    $('.file-preview').show();
 	});
 
@@ -32,29 +33,18 @@ $(document).ready(function(){
 	    document.getElementById('preview').innerHTML =
       	marked($('#text-input').val());
 
+      	_outContent = $('#outHtml').prop("outerHTML");
+      	console.log(_outContent);
+
 	});
 
-	// function changePreview() {
-	// 	document.getElementById('preview').innerHTML =
- //      marked($('#text-input').val());
-	// }
-
-	// function Editor(input, preview) {
- //        this.update = function () {
- //          preview.innerHTML = markdown.toHTML(input.value);
- //        };
- //        input.editor = this;
- //        this.update();
- //      }
- //      var $ = function (id) { return document.getElementById(id); };
- //      new Editor($("text-input"), $("preview"));
- // 	$('textarea').bind('input propertychange', function() {
-	//     $('.msg').html($(this).val().length + ' characters');
-	// });
 	$('#text-input').bind('input propertychange', function() {
 	    document.getElementById('preview').innerHTML =
       	marked($('#text-input').val());
 	});
 
-	
+	$("#send").click(function(){
+	    window.location.href = "mailto: ?subject= &body=<html><body>"+_outContent+"</body></html>";
+	});
+
 })
