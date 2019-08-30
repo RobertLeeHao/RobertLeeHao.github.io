@@ -19,8 +19,8 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">周报编辑器</a>
-          <button id="send" class="btn btn-default">发送</button>
+          <a class="navbar-brand" href="#">邮件编辑器</a>
+          <!-- <button id="send" class="btn btn-default">发送</button> -->
         </div>
       </div><!-- /.container-fluid -->
     </nav>
@@ -36,7 +36,7 @@
             <textarea id="text-input" class="form-control" rows="12"></textarea>
           </div>
           <h3>说明</h3>
-          <p>MD文件为后缀名为.md的文本格式文件。使用简单的标记即可对文字进行样式调整。上传的MD文件可在本页面预览效果，点击发送即可调用本地邮箱发送格式美观的邮件。</p>
+          <!-- <p>MD文件为后缀名为.md的文本格式文件。使用简单的标记即可对文字进行样式调整。上传的MD文件可在本页面预览效果，点击发送即可调用本地邮箱发送格式美观的邮件。</p>
           <h5>格式介绍</h5>
           <p>在字段前增加“#”可定义标题，“#”后面字段为一级标题，“##”后面为二级标题，以此类推支持6级标题。注意“#”和文字中间需要增加空格，例如“## 我是二级标题”</p>
           <p>无序列表可以用* ， + ， — 来创建，用在线编辑器看，实际上是转换成了ul>li ，所以使用哪个都可以，推荐使用*吧</p>
@@ -44,9 +44,14 @@
           <p>“>”表示引用，类似标题，可支持7级引用</p>
           <p>分割线可以由* - _（星号，减号，底线）这3个符号的至少3个符号表示，注意至少要3个，且不需要连续，有空格也可以</p>
           <p>链接的文字放在[]中，链接地址放在随后的（）中</p>
-          <p>可以在线编辑，地址：<a href="http://tool.oschina.net/markdown/">markdown在线编辑</a></p>
-          
+          <p>可以在线编辑，地址：<a href="http://tool.oschina.net/markdown/">markdown在线编辑</a></p> -->
+          <p>第一步：上传、编辑md文件</p>
+          <p>第二步：点击按钮</p>
+          <p>第三步：在新页面选择全部并复制到剪切板</p>
+          <p>第四步：新建邮件，在内容区粘贴</p>
+          <button id="send" class="btn btn-primary btn-block" type="button">创建邮件</button>
         </form>
+
         <div class="col-md-8">
           <h3>效果预览</h3>
           <table id="outHtml" width="640px"  style="background-color: rgba(0,0,0,0.04);border: 1px solid  rgba(0,0,0,0.06)">

@@ -44,7 +44,8 @@ $(document).ready(function(){
 	});
 
 	$("#send").click(function(){
-	    window.location.href = "mailto: ?subject= &body=<html><body>"+_outContent+"</body></html>";
+	    // window.location.href = "mailto: ?subject= &body=<html><body>"+_outContent+"</body></html>";
+	    window.location.href = encodeURI("preview.html?"+_outContent);
 	});
 
 })
