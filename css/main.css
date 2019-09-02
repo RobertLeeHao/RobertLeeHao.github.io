@@ -1,0 +1,61 @@
+/*override*/
+.navbar-default {
+	border:none;
+	background-color: transparent;
+}
+/*section 01*/
+.scetion-first {
+	position: relative;
+	height: 600px;
+	background-color: rgba(0,0,0,0.1);
+	overflow: hidden;
+	margin: 0 -15px;
+}
+.section-first::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	right: 0;
+	top:0;
+	height: 200px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.1);
+}
+.scetion-first .groupTitle{
+	margin-top: 200px;
+}
+/*title*/
+.groupTitle {
+	text-align: center;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+/*card*/
+.card {
+	text-align: left;
+	border-radius: 4px;
+	border: 1px solid rgba(0,0,0,0.1);
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+	padding: 10px;
+	overflow: hidden;
+	margin-bottom:30px;
+	white-space: normal;
+}
+.img {
+	height: 200px;
+	background-color: rgba(0,0,0,0.15);
+	margin: -10px -10px 0px -10px;
+}
+.card h4 {
+	margin-bottom: 2px;
+}
+.card p {
+	margin-bottom: 0;
+}
+
+@media(max-width:767px){
+	.card {
+		margin-bottom:15px;
+	}
+}
