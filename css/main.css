@@ -1,15 +1,117 @@
 /*override*/
+body {
+	
+}
+body * {
+	color: white;
+}
+.navbar-nav {
+	position: relative;
+}
+.navbar-nav::before {
+	position: absolute;
+	content: "";
+	right: 16px;
+	top: 120%;
+	height: 100px;
+	width: 1px;
+	background-color: white;
+}
+.navbar-default .navbar-nav {
+	margin-top: 35px;
+	margin-right: 5px;
+	margin-bottom: -200px;
+}
+.navbar-default .navbar-nav>li>a {
+	padding-top: 0;
+	padding-bottom: 5px;
+	color:white;
+	text-align: right;
+}
+.navbar-default .navbar-nav>li {
+	float: none;
+}
+.navbar-brand {
+	height: 64px;
+	width: 64px;
+	background-image: url("../img/logo.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+	margin-left: 16px;
+	margin-top: 36px;
+}
+
+
+
+
 .navbar-default {
 	border:none;
 	background-color: transparent;
 }
+
+
+
+.bg01, .bg02, .bg03, .bg04, .bg05 {
+	position: absolute;
+}
+.bg {
+	position: fixed;
+	left: 0;
+	top:0;
+	bottom: 0;
+	right: 0;
+	background-image: radial-gradient(50% 118%, #24305C 19%, #000000 100%);
+}
+.bg01 {
+	left: 10%;
+	width: 20%;
+	height: 50%;
+	opacity: 0.22;
+	background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #FFFFFF 100%);
+}
+.bg02 {
+	left: 25%;
+	top:45%;
+	width: 10%;
+	height: 20%;
+	opacity: 0.1;
+	background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #FFFFFF 100%);
+}
+.bg03 {
+	right: 0;
+	width: 20%;
+	top:0;
+	bottom: 0;
+	background: rgba(0,0,0,0.2);
+}
+.bg04 {
+	width: 400px;
+	height: 400px;
+	right: 16%;
+	bottom: 14%;
+	background-image: url(../img/bg04.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.bg05 {
+	width: 1px;
+	height: 100px;
+	left: 50px;
+	bottom: 50px;
+	background-color: white;
+}
+
+
+
+
 /*section 01*/
 .scetion-first {
 	position: relative;
-	height: 600px;
-	background-color: rgba(0,0,0,0.1);
+	width: 100%;
 	overflow: hidden;
-	margin: 0 -15px;
+	display: table;
 }
 .section-first::before {
 	position: absolute;
@@ -19,11 +121,31 @@
 	top:0;
 	height: 200px;
 	width: 100%;
-	background-color: rgba(0,0,0,0.1);
 }
-.scetion-first .groupTitle{
-	margin-top: 200px;
+.section-head {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
 }
+.section-head .navbar-brand {
+	width: 100%;
+	background-position: center;
+	margin-bottom: 30px;
+}
+.section-head .head-s {
+	font-weight: 400;
+	font-size: 48px;
+	text-shadow: 0 2px 100px #000000;
+}
+.section-head .head-l {
+	font-family: Arial-BoldMT;
+	font-weight: 900;
+	font-size: 200px;
+	color: #F5A623;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
 /*title*/
 .groupTitle {
 	text-align: center;
@@ -59,3 +181,4 @@
 		margin-bottom:15px;
 	}
 }
+
