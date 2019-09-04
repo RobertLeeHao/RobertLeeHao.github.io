@@ -42,17 +42,13 @@ body * {
 	margin-left: 16px;
 	margin-top: 36px;
 }
-
-
-
-
 .navbar-default {
 	border:none;
 	background-color: transparent;
 }
 
 
-
+/*bg*/
 .bg01, .bg02, .bg03, .bg04, .bg05 {
 	position: absolute;
 }
@@ -63,6 +59,7 @@ body * {
 	bottom: 0;
 	right: 0;
 	background-image: radial-gradient(50% 118%, #24305C 19%, #000000 100%);
+	z-index: -10;
 }
 .bg01 {
 	left: 10%;
@@ -102,8 +99,34 @@ body * {
 	bottom: 50px;
 	background-color: white;
 }
-
-
+.social {
+	position: absolute;
+	bottom: 40px;
+	right: 50px;
+}
+.social a {
+	width: 40px;
+	height: 40px;
+	border: none;
+	background-color: rgba(0,0,0,0.00000001);
+	color: white;
+	padding: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 24px 24px;
+}
+#social-mail {
+	background-image: url(../img/social-mail.png);
+}
+#social-ins {
+	background-image: url(../img/social-ins.png);
+}
+#social-behance {
+	background-image: url(../img/social-behance.png);
+}
+#social-github {
+	background-image: url(../img/social-github.png);
+}
 
 
 /*section 01*/
@@ -146,6 +169,8 @@ body * {
 	text-transform: uppercase;
 }
 
+
+
 /*title*/
 .groupTitle {
 	text-align: center;
@@ -153,6 +178,7 @@ body * {
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+
 /*card*/
 .card {
 	text-align: left;
@@ -165,8 +191,9 @@ body * {
 	white-space: normal;
 }
 .img {
+	display: block;
 	height: 200px;
-	background-color: rgba(0,0,0,0.15);
+	background-color: rgba(255,255,255,0.8);
 	margin: -10px -10px 0px -10px;
 }
 .card h4 {
@@ -176,9 +203,53 @@ body * {
 	margin-bottom: 0;
 }
 
+/*work*/
+.work01 {
+	height: 300px;
+}
+.work02 {
+	height: 380px;
+}
+
 @media(max-width:767px){
 	.card {
 		margin-bottom:15px;
 	}
 }
 
+
+/*section 02*/
+#aboutme {
+	position: relative;
+	padding-top: 200px;
+	padding-left: 50px;
+}
+.sammary {
+	width: 60%;
+	max-width: 768px;
+}
+.skills h1{
+	display: inline-block;
+	color: #F5A623;
+	font-size: 80px;
+	text-transform: uppercase;
+	padding-right: 40px;
+}
+.skills small {
+	display: block;
+	font-size: 24px;
+	color: white;
+}
+.logos {
+	margin-top: 60px;
+	max-width: 1024px;
+}
+.logo-c {
+	display: inline-block;
+	overflow: hidden;
+	height: 80px;
+	width: 80px;
+	background-color: rgba(255,255,255,0.1);
+	margin:0;
+	padding: 0;
+}
