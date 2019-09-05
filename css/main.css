@@ -1,6 +1,9 @@
 /*override*/
+/** {
+	transition: 0.3s;
+}*/
 body {
-	
+	/*scroll-behavior: smooth;*/
 }
 body * {
 	color: white;
