@@ -1,12 +1,15 @@
 /*override*/
-/** {
+* {
 	transition: 0.3s;
-}*/
+}
 body {
 	/*scroll-behavior: smooth;*/
 }
 body * {
 	color: white;
+}
+.sr-only {
+	transition: 0.3s;
 }
 .navbar-nav {
 	position: relative;
@@ -35,8 +38,8 @@ body * {
 	float: none;
 }
 .navbar-brand {
-	height: 64px;
-	width: 64px;
+	height: 48px;
+	width: 48px;
 	background-image: url("../img/logo.png");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -154,6 +157,8 @@ body * {
 	text-align: center;
 }
 .section-head .navbar-brand {
+	width: 64px;
+	height: 64px;
 	width: 100%;
 	background-position: center;
 	margin-bottom: 30px;
@@ -223,36 +228,44 @@ body * {
 
 /*section 02*/
 #aboutme {
-	position: relative;
+	/*position: relative;
 	padding-top: 200px;
-	padding-left: 50px;
+	padding-left: 50px;*/
 }
 .sammary {
-	width: 60%;
-	max-width: 768px;
+	/*width: 60%;
+	max-width: 768px;*/
+	margin-bottom: 60px;
 }
-.skills h1{
+h1.skills {
 	display: inline-block;
 	color: #F5A623;
-	font-size: 80px;
+	font-size: 64px;
 	text-transform: uppercase;
-	padding-right: 40px;
+	/*padding-right: 40px;*/
 }
 .skills small {
 	display: block;
-	font-size: 24px;
+	font-size: 18px;
 	color: white;
 }
 .logos {
-	margin-top: 60px;
-	max-width: 1024px;
+/*	margin-top: 60px;
+	max-width: 1024px;*/
 }
 .logo-c {
-	display: inline-block;
-	overflow: hidden;
 	height: 80px;
-	width: 80px;
 	background-color: rgba(255,255,255,0.1);
-	margin:0;
-	padding: 0;
+}
+
+
+/*work page*/
+.workpage h1 {
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+.workpage small {
+	display: block;
+	margin-bottom: 20px;
+	color: rgba(255,255,255,0.6);
 }
