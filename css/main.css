@@ -6,7 +6,7 @@ body {
 	/*scroll-behavior: smooth;*/
 }
 body * {
-	color: white;
+	/*color: white;*/
 }
 .sr-only {
 	transition: 0.3s;
@@ -19,9 +19,9 @@ body * {
 	content: "";
 	right: 16px;
 	top: 120%;
-	height: 100px;
+	height: 60px;
 	width: 1px;
-	background-color: white;
+	background-color: #9B9B9B;
 }
 .navbar-default .navbar-nav {
 	margin-top: 35px;
@@ -31,21 +31,21 @@ body * {
 .navbar-default .navbar-nav>li>a {
 	padding-top: 0;
 	padding-bottom: 5px;
-	color:white;
+	color: #4A4A4A;
 	text-align: right;
 }
 .navbar-default .navbar-nav>li {
 	float: none;
 }
 .navbar-brand {
-	height: 48px;
-	width: 48px;
+	height: 32px;
+	width: 32px;
 	background-image: url("../img/logo.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-	margin-left: 16px;
+	margin-left: 37px;
 	margin-top: 36px;
 }
 .navbar-default {
@@ -55,7 +55,7 @@ body * {
 
 
 /*bg*/
-.bg01, .bg02, .bg03, .bg04, .bg05 {
+.bg01, .bg02, .bg04, .bg05 {
 	position: absolute;
 }
 .bg {
@@ -64,32 +64,31 @@ body * {
 	top:0;
 	bottom: 0;
 	right: 0;
-	background-image: radial-gradient(50% 118%, #24305C 19%, #000000 100%);
+	background-color: #F0F1F2;
 	z-index: -10;
 }
 .bg01 {
-	left: 10%;
-	width: 20%;
-	height: 50%;
-	opacity: 0.22;
-	background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #FFFFFF 100%);
+	left: 136px;
+	width: 1px;
+	height: 100%;
+	background-color: rgba(151,151,151,0.2);
 }
 .bg02 {
-	left: 25%;
-	top:45%;
-	width: 10%;
-	height: 20%;
-	opacity: 0.1;
-	background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #FFFFFF 100%);
+	top:50%;
+	left: 25px;
+	color: #9B9B9B;
+	transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg); 	/* IE 9 */
+	-moz-transform:rotate(-90deg); 	/* Firefox */
+	-webkit-transform:rotate(-90deg); /* Safari 和 Chrome */
+	-o-transform:rotate(-90deg); 	/* Opera */
 }
 .bg03 {
-	right: 0;
-	width: 20%;
-	top:0;
-	bottom: 0;
-	background: rgba(0,0,0,0.2);
+	height: 100%;
+	border-left:1px solid rgba(151,151,151,0.2);
+	border-right:1px solid rgba(151,151,151,0.2);
 }
-.bg04 {
+/*.bg04 {
 	width: 400px;
 	height: 400px;
 	right: 16%;
@@ -97,13 +96,13 @@ body * {
 	background-image: url(../img/bg04.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
-}
+}*/
 .bg05 {
 	width: 1px;
-	height: 100px;
-	left: 50px;
-	bottom: 50px;
-	background-color: white;
+	height: 60px;
+	left: 64px;
+	bottom: 36px;
+	background-color: #9B9B9B;
 }
 .social {
 	position: absolute;
@@ -139,10 +138,10 @@ body * {
 .scetion-first {
 	position: relative;
 	width: 100%;
-	overflow: hidden;
-	display: table;
+	/*overflow: hidden;*/
+	/*display: table;*/
 }
-.section-first::before {
+/*.section-first::before {
 	position: absolute;
 	content: "";
 	left: 0;
@@ -150,31 +149,54 @@ body * {
 	top:0;
 	height: 200px;
 	width: 100%;
-}
+}*/
 .section-head {
-	display: table-cell;
+	position: relative;
+	margin-left: -15px;
+	/*display: table-cell;
 	vertical-align: middle;
-	text-align: center;
-}
-.section-head .navbar-brand {
-	width: 64px;
-	height: 64px;
-	width: 100%;
-	background-position: center;
-	margin-bottom: 30px;
+	text-align: center;*/
+	padding-top: 55%;
 }
 .section-head .head-s {
+	display: block;
 	font-weight: 400;
-	font-size: 48px;
-	text-shadow: 0 2px 100px #000000;
+	font-size: 18px;
+	color: #9B9B9B;
+	width: 50%;
+	padding-left: 30px;
+	/*text-shadow: 0 2px 100px #000000;*/
+}
+.head-mask {
+	position: absolute;
+	overflow: hidden;
+	left: 0px;
+	right: -15px;
+}
+.section-head .head-mask {
+	top:50%; 
+} 
+.head-xl {
+	display: block;
+	font-weight: 900;
+	font-size: 300px;
+	color: rgba(155,155,155,0.2);
+	white-space: nowrap;
+	/*text-shadow: 0 2px 100px #000000;*/
+}
+.section-head .head-xl {
+	margin-left: -66px;
+	/*text-shadow: 0 2px 100px #000000;*/
 }
 .section-head .head-l {
+	display: block;
 	font-family: Arial-BoldMT;
 	font-weight: 900;
-	font-size: 200px;
-	color: #F5A623;
-	line-height: 1;
+	font-size: 48px;
+	color: #4A4A4A;
 	text-transform: uppercase;
+	padding-bottom: 32px;
+	padding-left: 30px;
 }
 
 
@@ -232,9 +254,21 @@ body * {
 	padding-top: 200px;
 	padding-left: 50px;*/
 }
+#aboutme .row {
+	position: relative;
+}
+#aboutme .head-mask {
+	right: 0px;
+	text-align: right;
+} 
+#aboutme .head-xl {
+	font-size: 220px;
+	margin-right: -30px;
+}
 .sammary {
 	/*width: 60%;
 	max-width: 768px;*/
+	margin-top: 15%;
 	margin-bottom: 60px;
 }
 h1.skills {
@@ -255,9 +289,30 @@ h1.skills {
 }
 .logo-c {
 	height: 80px;
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(0,0,0,0.1);
 }
-
+.showartical {
+	overflow: hidden;
+}
+.showartical #mywork, .showartical #before, .showartical #after, .showartical #aboutme{
+	opacity: 0;
+}
+.showartical .artical {
+	display: block;
+}
+.artical {
+	position: fixed;
+	display: none;
+	top:0;
+	width: 100%;
+	z-index: 10;
+	overflow: scroll;
+	
+}
+.artical .container {
+	position: relative;
+	
+}
 
 /*work page*/
 .workpage h1 {

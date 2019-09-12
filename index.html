@@ -10,15 +10,10 @@
     <!-- Bootstrap -->
     <link href="plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
     <script src="js/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugin/marked/marked.min.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
@@ -32,25 +27,25 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand sr-only" data-href="#topsection"></a>
+          <a class="navbar-brand" data-href="#before"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a  data-href="#aboutme">ABOUT ME</a></li>
-            <li><a  data-href="#mywork">MY WORK</a></li>
-            <li><a  data-href="#">EXPRIENCE SHARE</a></li>
-            <li><a  data-href="#">TOOLS</a></li>
+            <li><a  data-href="#aboutme">关于我</a></li>
+            <li><a  data-href="#mywork">我的项目</a></li>
+            <li><a  data-href="#">经验分享</a></li>
+            <li><a  data-href="#">自制工具</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
     <div class="bg">
       <div class="bg01"></div>
-      <div class="bg02"></div>
-      <div class="bg03"></div>
-      <div class="bg04"></div>
+      <div class="bg02">Lee’s website</div>
+      <div class="bg03 container"></div>
+      <!-- <div class="bg04"></div> -->
       <div class="bg05"></div>
       <ul class="social list-inline">
         <li><a id="social-ins" href="" class="btn btn-default" role="button"></a></li>
@@ -59,43 +54,49 @@
         <li><a id="social-behance" href="" class="btn btn-default" role="button"></a></li>
       </ul>
     </div>
-    <div class="container-fluid">
+    <div id="before" class="container">
       <div id="topsection" class="scetion-first">
         <div class="section-head">
-          <div class="navbar-brand"></div>
-          <span class="head-s">Hello, this is Robert Lee.<br/></span>
-          <span class="head-l">DESIGNER<br/>frontend<br/>inspirer</span>
+          <div class="head-mask">
+            <span class="head-xl">全栈设计师</span>
+          </div>
+          <span class="head-s">你好，我是李昊<br/></span>
+          <span class="head-l">交互设计 视觉设计 前端开发</span>
+          <span class="head-s">多年设计与管理经验，负责产品策划与设计，优化业务体验。服务公司包括微软、XXXX、XXX、XXXXXXXXXXXXXXXXXXX等。</span>
         </div>
       </div>
-      <div id="aboutme" class="container">
+      
+    </div>
+    <div id="aboutme" class="container">
         <div class="row">
-          <h3 class="groupTitle">ABOUT ME</h3>
+          <div class="head-mask">
+            <span class="head-xl">关于我</span>
+          </div>
           <p class="sammary col-md-6 col-md-offset-3">占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符占位符</p>
-          <h1 class="skills col-md-4">inspirer<small>发现并解决体验问题</small></h1>
-          <h1 class="skills col-md-4">DESIGNER<small>准确传达业务诉求</small></h1>
-          <h1 class="skills col-md-4">frontend<small>高效把控团队输出</small></h1>
         </div>
         <div class="row">
           <h3 class="groupTitle">合作公司</h3>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
-            <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+          <div class="logo-c col-md-1"></div>
+        </div>
+        <div class="row">
+          <h3 class="groupTitle">职业轨迹</h3>
         </div>
       </div>
-    </div>
     <div id="mywork" class="container">
       <h3 class="groupTitle">My Work</h3>
       <div class="row">
@@ -103,8 +104,8 @@
           <div class="img work01"></div>    
         </div>
         <div class="col-md-4">
-          <h4>标题占位符标题占位符</h4>
-          <p>内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符内容占位符</p>
+          <h4>携程｜自由行</h4>
+          <p>带领设计团队针对业务自由性高带来的复杂性做了视觉轻量化和交互整理。根据数据表现提出体验改进方案。</p>
           <button id="work01" type="button" class="btn btn-default btn-work">Go</button>
         </div>
       </div>
@@ -132,7 +133,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div id="after" class="container">
       <h3 class="groupTitle">经验分享</h3>
       <div class="row">
         <div class="col-md-4 col-sm-6">
@@ -174,6 +175,15 @@
             <small>2019-08-07</small>
             <p>副标题占位符副标题占位符副标题占位符副标题占位符副标题占位符副标题占位符</p>
           </a>     
+        </div>
+      </div>
+    </div>
+    <div id="artical" class="artical">
+      <div class="container workpage">
+        <div class="row">
+          <div class="hiddenContent"></div>
+          <div id="previewContent" class="col-md-6 col-md-offset-3">
+          </div>
         </div>
       </div>
     </div>
