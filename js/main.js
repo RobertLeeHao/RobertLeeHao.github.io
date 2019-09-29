@@ -29,23 +29,18 @@ $(document).ready(function(){
     $(document).scroll(function() {
         var scroH = $(document).scrollTop();  //滚动高度
         var viewH = $(window).height();  //可见高度 
-        // var contentH = $(document).height();  //内容高度
- 
-//         if(scroH >=(viewH-50)){  //距离顶部大于100px时
-//  			console.log(scroH+"+");
-//  			$('.navbar .navbar-brand').removeClass('sr-only');
-//         }
-// 		else {
-// 			if ($('.navbar .navbar-brand').hasClass('sr-only') == false) {
-// 				$('.navbar .navbar-brand').addClass('sr-only');
-// 			}
-// 		}
     });
+    //logos
+    for (var i = 26; i >0; i--) {
+        $(".cocom").after("<div class='logo-c col-md-2'><img src='img/logos/logo"+i+".jpg'><img class='img-h' src='img/logos/logo"+i+"-h.jpg"+"'></div>");
+    }
+    // $(".logo-c").hover(function(){
+    //     $(this).children(".img-h").css("opacity",1);
+    //     },function(){
+    //     $(this).children(".img-h").css("opacity",0.00001);
+    // });
 
     // markdown
-
-
-  	
   	$.ajax({
 	    url:'./static/md/p1.txt',
 	    type:"post",
