@@ -22,7 +22,23 @@ $(document).ready(function(){
 		}  
     });
     // 点击跳转
-    $("#work01").click(function(){
+    $(".btn-work").click(function(){
+        // 获取文章资源
+        var atcNb = $(this).attr('mata-work');
+        console.log(atcNb);
+        $.ajax({
+            url:'./static/md/p'+atcNb+'.txt',
+            type:"post",
+            dataType:'text',
+            data:{},
+            async:false,
+            success:function(data){
+                articalContent = data;          
+            }
+        });
+        console.log(articalContent);
+        $("#previewContent").html(marked(articalContent));
+        // 展示文章
         $('body').addClass("showartical");
     });
     // 滚动监听
@@ -40,17 +56,5 @@ $(document).ready(function(){
     //     $(this).children(".img-h").css("opacity",0.00001);
     // });
 
-    // markdown
-  	$.ajax({
-	    url:'./static/md/p1.txt',
-	    type:"post",
-	    dataType:'text',
-	    data:{},
-	    async:false,
-	    success:function(data){
-	        articalContent = data;	        
-	    }
-	});
-  	console.log(articalContent);
-  	$("#previewContent").html(marked(articalContent));
+    
 })

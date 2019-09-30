@@ -33,6 +33,10 @@ body * {
 	padding-bottom: 5px;
 	color: #4A4A4A;
 	text-align: right;
+	cursor:pointer;
+}
+.navbar-default .navbar-nav>li>a:hover {
+	opacity: 0.6;
 }
 .navbar-default .navbar-nav>li {
 	float: none;
@@ -224,7 +228,7 @@ body * {
 	display: block;
 	height: 200px;
 	background-color: rgba(255,255,255,0.8);
-	margin: -10px -10px 0px -10px;
+	/*margin: -10px -10px 0px -10px;*/
 }
 .card h4 {
 	margin-bottom: 2px;
@@ -240,6 +244,16 @@ body * {
 .work02 {
 	height: 380px;
 }
+.btn-work {
+	width: 32px;
+	height: 32px;
+	border: none;
+	background-image: url(../img/btn-open.jpg);
+	background-size: contain;
+}
+.btn-work:hover {
+	background-image: url(../img/btn-open-h.jpg);
+}
 
 @media(max-width:767px){
 	.card {
@@ -254,17 +268,22 @@ body * {
 	padding-top: 200px;
 	padding-left: 50px;*/
 }
-#aboutme .row {
+#aboutme .row, #mycareer .row, #mywork .row {
 	position: relative;
 }
 #aboutme .head-mask {
 	right: 0px;
 	text-align: right;
 } 
-#mycareer .headmask {
+#mycareer .head-mask {
 	left: -15px;
 	right: -15px;
 	text-align: center;
+}
+#mywork .head-mask {
+	left: 0px;
+	right: 0px;
+	text-align: left;
 }
 #mycareer .head-xl {
 	font-size: 220px;
@@ -273,6 +292,10 @@ body * {
 #aboutme .head-xl {
 	font-size: 220px;
 	margin-right: -30px;
+}
+#mywork .head-xl {
+	font-size: 220px;
+	margin-left: -30px;
 }
 .sammary {
 	/*width: 60%;
@@ -361,6 +384,10 @@ h1.skills {
 }
 #mycareer .row:first-child {
 	margin-top: 100px;
+}
+#mywork .row:first-child {
+	margin-top: 100px;
+	margin-bottom: 200px;
 }
 .line-career:before {
 	position: absolute;
