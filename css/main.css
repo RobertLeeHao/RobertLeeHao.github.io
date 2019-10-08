@@ -27,16 +27,31 @@ body * {
 	margin-top: 35px;
 	margin-right: 5px;
 	margin-bottom: -200px;
+	text-align: right;
 }
 .navbar-default .navbar-nav>li>a {
+	display: inline-block;
 	padding-top: 0;
 	padding-bottom: 5px;
 	color: #4A4A4A;
 	text-align: right;
 	cursor:pointer;
+	position: relative;
 }
-.navbar-default .navbar-nav>li>a:hover {
-	opacity: 0.6;
+.navbar-default .navbar-nav>li>a:before {
+	position: absolute;
+	content: "";
+	height: 1px;
+	background-color: #4A4A4A;
+	right: 15px;
+	left: 45px;
+	bottom: 5px;
+	opacity: 0;
+}
+.navbar-default .navbar-nav>li>a:hover:before {
+	left:15px;
+	opacity: 1;
+	transition: 0.3s;
 }
 .navbar-default .navbar-nav>li {
 	float: none;
@@ -276,8 +291,8 @@ body * {
 	text-align: right;
 } 
 #mycareer .head-mask {
-	left: -15px;
-	right: -15px;
+	left: 0px;
+	right: 0px;
 	text-align: center;
 }
 #mywork .head-mask {
@@ -410,3 +425,7 @@ h1.skills {
 	margin-bottom: 20px;
 	color: rgba(255,255,255,0.6);
 }
+
+
+
+/*md尺寸*/

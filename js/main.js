@@ -1,10 +1,22 @@
 $(document).ready(function(){
 	var articalContent = '';
-	// 调用窗口高度
+
+    // 定义container宽度方法
+    function containerWidth() {
+        if ($(window).width()>768 && $(window).width()<=1442) {
+            $(".container").css("width",$(window).width()-272);
+        } else if ($(window).width()<=768){
+            $(".container").css("width","100%");
+        }
+    }
+    containerWidth();
+	// 窗口高度、宽度变化时
 	$("#topsection, .bg, .artical").css("height",$(window).height());
 	$(window).resize(function () {
     	$("#topsection, .bg, .artical").css("height",$(window).height());
+        containerWidth();
 	});
+
 	// 锚点平滑过度
 	$('.navbar-nav a').click(function(){
 		$('body').removeClass('showartical');
