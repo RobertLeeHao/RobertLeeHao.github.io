@@ -3,10 +3,18 @@
 	transition: 0.3s;
 }
 body {
-	/*scroll-behavior: smooth;*/
+	position: relative;
+	background-color: #F0F1F2;
 }
 body * {
 	/*color: white;*/
+}
+.btn-default:active {
+	background-color: transparent;
+	box-shadow: none;
+}
+.btn-default:active:hover {
+	background-color: transparent;
 }
 .sr-only {
 	transition: 0.3s;
@@ -62,6 +70,7 @@ body * {
 	background-image: url("../img/logo.png");
 	background-size: contain;
 	background-repeat: no-repeat;
+	cursor:pointer;
 }
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
 	margin-left: 37px;
@@ -123,26 +132,23 @@ body * {
 	bottom: 36px;
 	background-color: #9B9B9B;
 }
-.social {
-	position: absolute;
-	bottom: 40px;
-	right: 50px;
-}
-.social a {
-	width: 40px;
-	height: 40px;
+
+a.social {
 	border: none;
 	background-color: rgba(0,0,0,0.00000001);
-	color: white;
 	padding: 0;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 24px 24px;
 }
-#social-mail {
+a.social:hover {
+	background-color: transparent;
+	opacity: 0.6;
+}
+a.social img {
+	width: 48px;
+}
+/*#social-mail {
 	background-image: url(../img/social-mail.png);
-}
-#social-ins {
+}*/
+/*#social-ins {
 	background-image: url(../img/social-ins.png);
 }
 #social-behance {
@@ -150,7 +156,7 @@ body * {
 }
 #social-github {
 	background-image: url(../img/social-github.png);
-}
+}*/
 
 
 /*section 01*/
@@ -175,7 +181,7 @@ body * {
 	/*display: table-cell;
 	vertical-align: middle;
 	text-align: center;*/
-	padding-top: 55%;
+	padding-top: 50%;
 }
 .section-head .head-s {
 	display: block;
@@ -259,7 +265,7 @@ body * {
 .work02 {
 	height: 380px;
 }
-.btn-work {
+.btn-work, .btn-up {
 	width: 32px;
 	height: 32px;
 	border: none;
@@ -269,13 +275,27 @@ body * {
 .btn-work:hover {
 	background-image: url(../img/btn-open-h.jpg);
 }
-
-@media(max-width:767px){
-	.card {
-		margin-bottom:15px;
-	}
+.btn-up {
+	position: fixed;
+	z-index: 1000;
+	right: 50px;
+	bottom: 36px;
+	background-image: url(../img/btn-up.png);
+	background-color: transparent;
 }
-
+.btn-up:active {
+	transform:translateY(2px);
+	transition: 0s;
+}
+.btn-up:hover {
+	background-image: url(../img/btn-up-h.png);
+	background-color: transparent;
+}
+.btn-up.hidden {
+	display: inline-block!important;
+	opacity: 0;
+	transform:translateY(10px);
+}
 
 /*section 02*/
 #aboutme {
@@ -283,7 +303,7 @@ body * {
 	padding-top: 200px;
 	padding-left: 50px;*/
 }
-#aboutme .row, #mycareer .row, #mywork .row {
+#aboutme .row, #mycareer .row, #mywork .row, #mycontact .row {
 	position: relative;
 }
 #aboutme .head-mask {
@@ -300,6 +320,11 @@ body * {
 	right: 0px;
 	text-align: left;
 }
+#mycontact .head-mask {
+	left: 0px;
+	right: 0px;
+	text-align: center;
+}
 #mycareer .head-xl {
 	font-size: 220px;
 	text-align: center;
@@ -311,6 +336,9 @@ body * {
 #mywork .head-xl {
 	font-size: 220px;
 	margin-left: -30px;
+}
+#mycontact .head-xl {
+	font-size: 220px;
 }
 .sammary {
 	/*width: 60%;
@@ -360,11 +388,20 @@ h1.skills {
 .showartical {
 	overflow: hidden;
 }
-.showartical #mywork, .showartical #before, .showartical #mycareer, .showartical #aboutme{
+.showartical .navbar-brand {
+	background-image: url(../img/btn-close.jpg);
+}
+.showartical .navbar-brand:hover {
+	background-image: url(../img/btn-close-h.jpg);
+}
+.showartical #mywork, .showartical #before, .showartical #mycareer, .showartical #aboutme, .showartical #mycontact{
 	opacity: 0;
 }
 .showartical .artical {
 	display: block;
+}
+.showartical .btn-up {
+	display: none!important;
 }
 .artical {
 	position: fixed;
@@ -404,6 +441,10 @@ h1.skills {
 	margin-top: 100px;
 	margin-bottom: 200px;
 }
+#mycontact .row:first-child {
+	margin-top: 100px;
+	margin-bottom: 220px;
+}
 .line-career:before {
 	position: absolute;
 	top:-25px;
@@ -426,6 +467,134 @@ h1.skills {
 	color: rgba(255,255,255,0.6);
 }
 
+.btn-work-xs {
+	position: relative;
+	border-radius: 0;
+	height: 200px;
+	text-align: left;
+	margin-bottom: 15px;
+}
+.btn-work-xs:active {
+	transform:translateY(2px);
+	transition: 0s;
+}
+.btn-work-xs .text {
+	position: absolute;
+	bottom: 0;
+	left: 15px;
+	right: 15px;
+}
+.btn-work-xs .text * {
+	white-space: initial;
+}
 
+/*xs尺寸*/
+@media(max-width:767px){
+	.container {
+		/*overflow-x: hidden;*/
+	}
+	/*.card {
+		margin-bottom:15px;
+	}*/
+	.navbar-default {
+		background-color: #F0F1F2;
+		border-bottom: 1px solid rgba(151,151,151,0.2);
+	}
+	.navbar-default .navbar-nav {
+		margin: 7.5px -15px;
+	}
+	.navbar-nav::before {
+		content: none;
+	}
+	.navbar-default .navbar-nav>li>a {
+		display: block;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+		margin-left: 12px;
+		margin-top: 12px;
+	}
+	.navbar-brand {
+		width: 24px;
+		height: 24px;
+		padding: 0;
+	}
+	.navbar-default .navbar-toggle {
+		border-color: transparent;
+	}
+	.navbar-toggle {
+		margin-right: 8px;
+	}
+	/*.bg01 {
+	    left: 24px;
+	}*/
+	.bg01, .bg02, .bg03, .bg05 {
+		display: none;
+	}
+	.section-head {
+		padding-top: 80%;
+	}
+	.section-head .head-l {
+		font-size: 36px;
+		line-height: 1.2;
+	}
+	.section-head .head-s {
+		width: 100%;
+	}
+	.head-xl {
+		font-size: 140px;
+		line-height: 1.2;
+	}
+	.section-head .head-mask {
+		top:40%;
+	}
+	#aboutme .head-xl, #mycareer .head-xl, #mywork .head-xl, #mycontact .head-xl {
+		font-size: 80px;
+	}
+	.line-career {
+		top: 25px;
+		left: 15px;
+		padding-left: 0!important;
+	}
+	.line-career:before {
+		width: 12px;
+		height: 12px;
+		left: -6px;
+		top: -22px;
+	}
+	.col-md-offset-2 .line-career {
+		left: 15px;
+		right: auto;
+	}
+	.col-md-offset-2 * {
+		text-align: left;
+	}
+	#mycareer .col-md-4.col-md-offset-2 *, #mycareer .col-md-4.col-md-offset-6 * {
+		padding-left: 15px;
+	}
+	#mywork .row:first-child {
+		margin-bottom: 60px;
+	}
+	#mycontact .row:first-child {
+		margin-bottom: 60px;
+	}
+	#mycareer .row {
+		margin-top: 60px;
+	}
+	.btn-up {
+		right: 15px;
+		bottom: 15px;
+	}
+	.social {
+		margin-bottom: 15px;
+	}
+	a.social img {
+		width: 36px;
+	}
+	#mycontact {
+		margin-bottom: 100px;
+	}
+}
 
-/*md尺寸*/
