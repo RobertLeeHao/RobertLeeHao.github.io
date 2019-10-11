@@ -48,7 +48,7 @@ $(document).ready(function(){
         var atcNb = $(this).attr('mata-work');
         console.log(atcNb);
         $.ajax({
-            url:'./static/md/p'+atcNb+'.txt',
+            url:'./atc/exp/p'+atcNb+'.txt',
             type:"post",
             dataType:'text',
             data:{},
