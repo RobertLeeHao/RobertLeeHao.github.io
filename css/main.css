@@ -259,10 +259,18 @@ a.social img {
 }
 
 /*work*/
+.img.work01, .img.work02 {
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .work01 {
+	background-image: url('../img/exp/01.jpg');
+	background-size: cover;
 	height: 300px;
 }
 .work02 {
+	background-image: url('../img/exp/02.jpg');
+	background-size: contain;
 	height: 380px;
 }
 .btn-work, .btn-up {

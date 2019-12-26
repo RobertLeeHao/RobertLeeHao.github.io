@@ -43,25 +43,25 @@ $(document).ready(function(){
 		}  
     });
     // 点击跳转
-    $(".btn-work, .btn-work-xs").click(function(){
-        // 获取文章资源
-        var atcNb = $(this).attr('mata-work');
-        console.log(atcNb);
-        $.ajax({
-            url:'./atc/exp/p'+atcNb+'.txt',
-            type:"post",
-            dataType:'text',
-            data:{},
-            async:false,
-            success:function(data){
-                articalContent = data;          
-            }
-        });
-        console.log(articalContent);
-        $("#previewContent").html(marked(articalContent));
-        // 展示文章
-        $('body').addClass("showartical");
-    });
+    // $(".btn-work, .btn-work-xs").click(function(){
+    //     // 获取文章资源
+    //     var atcNb = $(this).attr('mata-work');
+    //     console.log(atcNb);
+    //     $.ajax({
+    //         url:'./atc/exp/p'+atcNb+'.txt',
+    //         type:"post",
+    //         dataType:'text',
+    //         data:{},
+    //         async:false,
+    //         success:function(data){
+    //             articalContent = data;          
+    //         }
+    //     });
+    //     console.log(articalContent);
+    //     $("#previewContent").html(marked(articalContent));
+    //     // 展示文章
+    //     $('body').addClass("showartical");
+    // });
     // 滚动监听
     $(document).scroll(function() {
         var scroH = $(document).scrollTop();  //滚动高度
