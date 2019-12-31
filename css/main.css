@@ -263,15 +263,20 @@ a.social img {
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.work01 {
+.work01, .work01:active {
 	background-image: url('../img/exp/01.jpg');
 	background-size: cover;
 	height: 300px;
 }
-.work02 {
+.work02, .work02:active {
 	background-image: url('../img/exp/02.jpg');
 	background-size: contain;
 	height: 380px;
+}
+
+.visible-xs-block .work01, .visible-xs-block .work02 {
+	position: relative;
+	height: 200px;
 }
 .btn-work, .btn-up {
 	width: 32px;
@@ -478,7 +483,7 @@ h1.skills {
 	height: 200px;
 	text-align: left;
 	margin-bottom: 15px;
-	border: 1px solid rgba(151,151,151,0.2);
+	border: 1px solid #CACACA;
 }
 .btn-work-xs:active {
 	transform:translateY(2px);
@@ -487,8 +492,11 @@ h1.skills {
 .btn-work-xs .text {
 	position: absolute;
 	bottom: 0;
-	left: 15px;
-	right: 15px;
+	left: 0;
+	right: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	background:white;
 }
 .btn-work-xs .text * {
 	white-space: initial;
