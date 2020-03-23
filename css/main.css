@@ -310,12 +310,14 @@ a.social img {
 	background-image: url(../img/btn-up-h.png);
 	background-color: transparent;
 }
-.btn-up.hidden {
+.btn-up.hidden, .btn-down.hidden {
 	display: inline-block!important;
 	opacity: 0;
 	transform:translateY(10px);
 }
-
+.btn-down.hidden {
+	transform:translateY(-10px);
+}
 .btn-down {
 	position: fixed;
 	z-index: 1001;
