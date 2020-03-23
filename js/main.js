@@ -18,7 +18,7 @@ $(document).ready(function(){
 	});
 
 	// 锚点平滑过度
-	$('.navbar-nav a, .btn-up').click(function(){
+	$('.navbar-nav a, .btn-up, .btn-down').click(function(){
 		$('body').removeClass('showartical');
         //根据a标签的href转换为id选择器，获取id元素所处的位置，并高度减50px（这里根据需要自由设置）
         $('html,body').animate({scrollTop: ($($(this).attr('data-href')).offset().top -50 )},500);
@@ -71,6 +71,11 @@ $(document).ready(function(){
             $(".btn-up").removeClass("hidden");
         } else {
             $(".btn-up").addClass("hidden");
+        }
+        if (scroH >= 36) {
+            $(".btn-down").addClass("hidden");
+        } else {
+            $(".btn-down").removeClass("hidden");
         }
     });
     //logos

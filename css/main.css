@@ -273,12 +273,18 @@ a.social img {
 	background-size: contain;
 	height: 380px;
 }
+.work03, .work03:active {
+	background-image: url('../img/exp/03.png');
+	background-size: cover;
+	background-position: center;
+	height: 160px;
+}
 
 .visible-xs-block .work01, .visible-xs-block .work02 {
 	position: relative;
 	height: 200px;
 }
-.btn-work, .btn-up {
+.btn-work, .btn-up, .btn-down {
 	width: 32px;
 	height: 32px;
 	border: none;
@@ -296,7 +302,7 @@ a.social img {
 	background-image: url(../img/btn-up.png);
 	background-color: transparent;
 }
-.btn-up:active {
+.btn-up:active, .btn-down:active {
 	transform:translateY(2px);
 	transition: 0s;
 }
@@ -310,12 +316,25 @@ a.social img {
 	transform:translateY(10px);
 }
 
-/*section 02*/
-#aboutme {
-	/*position: relative;
-	padding-top: 200px;
-	padding-left: 50px;*/
+.btn-down {
+	position: fixed;
+	z-index: 1001;
+	bottom: 36px;
+	left: 50%;
+	margin-left: -16px;
+	background-image: url(../img/btn-down.png);
+	background-color: transparent;
 }
+.btn-down:hover {
+	background-image: url(../img/btn-down-h.png);
+	background-color: transparent;
+}
+/* section 02 */
+
+/*#before {
+	position: relative;
+}*/
+
 #aboutme .row, #mycareer .row, #mywork .row, #mycontact .row {
 	position: relative;
 }
